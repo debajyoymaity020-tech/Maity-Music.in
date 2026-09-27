@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Artists' List.css">
+    <title>Artists' List</title>
+</head>
+<style>
+    html,
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+.sb{
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 240px;
+		background-color: rgba(0, 0, 0, 1.0);
+		padding: 25px 18px;
+         box-shadow:
+        0 0 2px #14e878,
+        0 0 10px #14e878;
+	}
+	.logo{
+		color: #1ed760;
+		font-size: 27px;
+		margin-bottom: 35px;
+		margin-left: 10px;
+
+	}
+    .s{
+        font-size: 102px;
+          text-shadow:
+        0 0 10px #14e878,
+        0 0 25px #14e878;
+    }
+	.search,
+    .on{
+		display: block;
+		text-decoration: none;
+		color:  #b3b3b3;
+        font-size: 18px;
+        margin-bottom: 20px; 
+        padding-top: 8px;
+        padding-bottom: 5px;
+        padding-left: 13px;
+         border-radius: 15px;
+        margin-bottom: 21px;
+        font-family: 'Courier New', Courier, monospace;
+        
+	}
+     .of{
+        height: 34%;
+        width: auto;
+        border: 1px solid #1ed760;
+        position: sticky;
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        border-top-right-radius: 30%;
+        border-bottom-left-radius: 30%;
+        margin-top: 15%; 
+        scrollbar-width: none;
+        box-shadow: 0 0 10px #1ed760,
+        0 0 10px #1ed760;
+
+    }  
+    .of:hover{
+        transform: scale(1.04);
+        transition: all ease-in-out 0.3s;
+    }
+    .play-list a{
+        display: block;
+        text-decoration: none;
+        padding-top: 8px;
+        padding-bottom: 5px;
+        padding-left: 17px;
+		color:  #b3b3b3;
+        font-size: 22px;
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-bottom: 8px;
+        /* border: 1px solid red; */
+    }
+    .play-list h3{
+		color:  #b3b3b3;
+        
+    }
+    /* .sb nav a:hover, */
+    .play-list a:hover{
+        color: white;
+    background: #282828;
+        padding: 10px,5px,10px,12px;
+    }
+    .on{
+      color: white;
+    background: #282828;
+    }
+    .search{
+        font-size: 30px;
+        /* margin-left: 7%; */
+        text-decoration: none;
+        /* border: 1px solid red; */
+        padding-left: 47px;
+        background-color: #1ed760;
+        color: black;
+        box-shadow: 0 0 2px #1ed760,
+        0 0 20px #1ed760;
+        margin-top: 20%;
+    }
+    .color-line{
+        border: 1px solid #1ed760;
+        width: 0px;
+        height: 100vh;
+        margin-left: 18.6%;
+        position: fixed;
+    }
+    main{
+         margin-left: 278px;
+        min-height: auto;
+        padding-bottom: 110px;
+         background: linear-gradient(
+        #252525,
+        #121212 500px
+        );
+        color: white;
+    }
+    .top-ser{
+        height: auto;
+        width: 99.2%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        /* border: 1px solid red; */
+        padding-top: 8px;
+    }
+      .sr{
+        margin-left: 86px;
+        width: 60%;
+        /* border: 1px solid red; */
+    }
+   input{
+    font-size: 76px;
+    width: 64%;
+    background-color: black;
+    border: none;
+    height:45px;
+    /* margin-left: 10%; */
+    /* border: 1px solid rgb(60, 108, 127) ; */
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+     box-shadow:
+        0 0 10px rgba(0, 295, 136, 0.6),
+        0 0 25px rgba(0, 295, 136, 0.25),
+        inset 0 0 20px rgba(0, 295, 136, 0.08);
+   }
+   input:hover{
+    border:1px solid skyblue;
+   }
+   input ::placeholder{
+    font-size: 100px;
+   }
+   .srcc{
+     font-size: 23px;
+    color: white;
+    background-color: black;
+    border: none;
+    border:1px solid #1ed760;
+    /* padding: 5px,10,5px,10px; */
+    padding-top: 7px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 14px;
+    border-radius: 13px;
+    margin-left: 14px;
+    cursor: pointer;
+   }
+   .srcc:hover{
+    background-color: #1ed760;
+    color: black;
+    transition: all ease-in-out 0.2s;
+   }
+   .country{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 2%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+     /* text-shadow: 0 0 10px #1ed760,
+    0 0 25px #1ed760; */
+   }
+   .country:hover{
+    color: #1ed760;
+   }
+   .number{
+    color: #1ed760;
+    box-shadow: none;
+   }
+   .country:hover .number{
+    color: white;
+    text-shadow: 0 0 10px #1ed760,
+    0 0 25px #1ed760;
+   }
+   .a-box{
+    width: 84%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3%;
+    /* border: 1px solid red; */
+    margin-left: 8%;
+   }
+   .adb{
+    height: auto;
+    width: 25%;
+    border: 0.1px solid #1ed760; 
+     /* box-shadow: 0 0 10px #1ed760,
+    0 0 10px #1ed760; */
+    background: #181818;
+    border-radius: 13px;
+   }
+   .alogo{
+    height: 160px;
+    width: 60%;
+    border: 1px solid #1ed760;
+    box-shadow: 0 0 10px #1ed760,
+    0 0 10px #1ed760;
+    border-radius: 50%;
+    margin-top: 7%;
+    margin-left: 20%;
+   }
+   .image{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+   }
+   .a-name{
+    width: auto;
+    /* border: 1px solid red; */
+    font-family: cursive;
+    /* margin-left: 28%; */
+	color:  #b3b3b3;
+    margin-top: 6%;
+    font-size: 20px;
+    text-align: center;
+   }
+   .flex{
+    display: flex;
+    align-items: center;
+    /* justify-content: spa; */
+   }
+   .ncount{
+    margin-left: 11%;
+    font-size: 20px;
+	color:  #b3b3b3;
+    font-family: "Bebas Neue", sans-serif;
+    display: none;
+    cursor: default;
+   }
+   .adb:hover .ncount{
+    display: inline-block;
+   }
+   .ncount:hover{
+    color: white;
+    transition: all ease-in-out 0.2s;
+   }
+   .btn{
+    padding: 7px;
+    margin-top: 7%;
+    font-size: 17px;
+    margin-left: 31%;
+    margin-bottom: 5%;
+    background-color: #1ed760;
+    border: none;
+    color: black;
+    border-radius: 15px;
+    cursor: pointer;
+    /* display: none; */
+   }
+  .btn:active{
+    color: white;
+    background-color: black;
+  }
+   .btn:hover{
+    box-shadow: 0 0 10px #1ed760,
+    0 0 10px #1ed760;
+    transform: scale(1.06);
+    transition: all ease-in-out 0.2s;
+   }
+   .adb:hover{
+    transform: translateY(-9px);
+    transition: all ease-in-out 0.3s;
+         background: #282828;
+        box-shadow: 0 0 10px #1ed760,
+    0 0 10px #1ed760;  
+
+   }
+   .adb:hover .alogo{
+    box-shadow:none;
+   }
+   .adb:hover .a-name{
+    color: white;
+     text-shadow: 0 0 10px #1ed760,
+    0 0 10px #1ed760;
+   }
+   .a-box1{
+     width: 84%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 3%;
+    /* border: 1px solid red; */
+    margin-left: 8%;
+   }
+  
+
+
+</style>
+<body>
+    <aside class="sb">
+	<div class="logo"> Maity <sub class="s">♫</sub> Music</div>
+	<nav>
+		<a class="on" style="color: white;" href="">🧑🏻‍🎤 All Artists' List</a>
+		<a href="" class="search"><b>Catagory</b></a>
+		<!-- <a href="">📚 Your Library</a> -->
+	</nav>
+	 <div class="of">
+        <div class="play-list">
+        <!-- <h3>YOUR PLAYLIST</h3> -->
+        <a href="#indian">🇮🇳 Indian Artists</a>
+        <a href="#American"><span>🇺🇸</span> American Artists</a>
+        <a href="#Canadian">🇨🇦 Canadian Artists</a>
+        <a href=""><span>🇰🇷</span> South Korean Artists</a>
+        <a href="">🇹🇭 Thailand Artists</a>
+         <a href="#indian">🇬🇧 UK Artists</a>
+        <a href=""><span>🇷🇺</span> Rusian Artists</a>
+         <a href="#indian">🇨🇳 Chinies Artists</a>
+        <a href="#American"><span>🇯🇵</span> Japanies Artists</a>
+        <a href="#Canadian">🇹🇷 Turkiey</a>
+        <a href=""><span>🇵🇭</span> Philippines</a>
+        <a href="">🇧🇩 Bangladeshi Artists</a>
+        <a href=""><span>🇵🇰</span> Pakistani Artists</a> 
+       
+        <!-- <a href="#American"><span>🇺🇸</span> American Artists</a>
+        <a href="#Canadian">🇨🇦 Canadian Artists</a>
+        <a href=""><span>🇰🇷</span> South Korean Artists</a>
+        <a href="">🇧🇩 Bangladesh Artists</a>
+        <a href=""><span>🇷🇺</span> Rusian Artists</a> -->
+    </div>
+    </div>
+</aside>
+            <!-- For Line  -->
+<aside>
+    <!-- <div class="color-line"></div> -->
+</aside>
+        <!-- Content Strats Form -->
+
+        <main class="m">
+
+            <div class="top-ser">
+                <div class="sr">
+        <form action="/search" method="get">
+  <input type="search" id="site-search" name="q" placeholder="Search...">
+  <button class="srcc" type="submit">Search</button>
+  </form>
+  </div>
+            </div>
+ <div class="country"id="indian"> <u>Indian Artists</u> <span class="number" id="num">#20</span></div>
+
+            <div class="a-box" id="indian">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/ari3.jpeg" alt="">
+                    </div>
+                    <div class="a-name">Arijit Sing</div>
+                   <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#1</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/sre1.avif" alt="">
+                    </div>
+                    <div class="a-name">Shreya Ghoshal</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#2</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/sonu1.jpg" alt="">
+                    </div>
+                    <div class="a-name">Sonu Nigam</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#3</div>
+                   </div>
+                </div>
+                
+            </div>
+                        <!-- Box 2 -->
+             <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/alka2.jpeg" alt="">
+                    </div>
+                    <div class="a-name">Alka Yagnik</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#4</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/kk1.avif" alt="">
+                    </div>
+                    <div class="a-name">KK</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#5</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/lata ji.jpg" alt="">
+                    </div>
+                    <div class="a-name">Lata Mangeshkar</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#6</div>
+                   </div>
+                </div>
+            </div>
+                    <!-- Box3 -->
+              <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/ksanu2.jpeg" alt="">
+                    </div>
+                    <div class="a-name">Kumar Sanu</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#7</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/asha3.jpg" alt="">
+                    </div>
+                    <div class="a-name" >Asha Bhosle</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#8</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/udit.jpg" alt="">
+                    </div>
+                    <div class="a-name">Udit Narayan</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#9</div>
+                   </div>
+                </div>
+                </div>
+                                    <!-- Box4 -->
+                      <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/shilpa2.jpeg" alt="">
+                    </div>
+                    <div class="a-name">Shilpa Rao</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#10</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/mc.jpg" alt="">
+                    </div>
+                    <div class="a-name">Mohit Chauhan</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#11</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/neha1.jpg" alt="">
+                    </div>
+                    <div class="a-name">Neha Kakkar</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#12</div>
+                   </div>
+                </div> 
+                </div>     
+                            <!-- Box5 -->
+                 <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/arman.avif" alt="">
+                    </div>
+                    <div class="a-name">Armaan Malik</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#13</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/neeti1.jpg" alt="">
+                    </div>
+                    <div class="a-name">Neeti Mohan</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#14</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/jubin1.webp" alt="">
+                    </div>
+                    <div class="a-name">Jubin Nautiyal</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#15</div>
+                   </div>
+                </div>      
+                </div>
+                            <!-- Box6 -->
+                          <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/palak1.avif" alt="">
+                    </div>
+                    <div class="a-name">Palak Muchhal</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#16</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/vishal1.avif" alt="">
+                    </div>
+                    <div class="a-name">Vishal Mishra</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#17</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/asees1.jpg" alt="">
+                    </div>
+                    <div class="a-name">Asees Kaur</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#18</div>
+                   </div>
+                </div>      
+                </div>
+                        <!-- Box-ultra7 -->
+                           <div class="a-box1">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/shan.jpg" alt="">
+                    </div>
+                    <div class="a-name">Shaan</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#19</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/sun3.avif" alt="">
+                    </div>
+                    <div class="a-name">Sunidhi Chauhan</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#20</div>
+                   </div>
+                </div>
+            </div>
+
+
+                                <!-- American -->
+
+
+
+            <div class="country"id="American"> <u>American Artists</u> <span class="number" id="num">#20</span></div>
+
+            <div class="a-box" id="indian">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/mj1.png" alt="">
+                    </div>
+                    <div class="a-name">Michael Jackson</div>
+                   <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#1</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/ts4.webp" alt="">
+                    </div>
+                    <div class="a-name">Taylor Swift</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#2</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/jb.webp" alt="">
+                    </div>
+                    <div class="a-name">Justin Bieber</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#3</div>
+                   </div>
+                </div>
+                
+            </div>
+                        <!-- Box 2 -->
+             <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/ariana1.avif" alt="">
+                    </div>
+                    <div class="a-name">Ariana Grande</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#4</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/tw2.avif" alt="">
+                    </div>
+                    <div class="a-name">The Weeknd</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#5</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/billi.jpeg" alt="">
+                    </div>
+                    <div class="a-name">Billie Eilish</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#6</div>
+                   </div>
+                </div>
+            </div>
+                    <!-- Box3 -->
+              <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/ed.jpg" alt="">
+                    </div>
+                    <div class="a-name">Ed Sheeran</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#7</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/lady2.jpg" alt="">
+                    </div>
+                    <div class="a-name" >Lady Gaga</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#8</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/jt1.jpg" alt="">
+                    </div>
+                    <div class="a-name">Justin Timberlake</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#9</div>
+                   </div>
+                </div>
+                </div>
+                                    <!-- Box4 -->
+                      <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/sabrina1.jpg" alt="">
+                    </div>
+                    <div class="a-name">Sabrina Carpenter</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#10</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/chris.avif" alt="">
+                    </div>
+                    <div class="a-name">Chris Brown</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#11</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/bey.jpg" alt="">
+                    </div>
+                    <div class="a-name">Beyoncé</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#12</div>
+                   </div>
+                </div> 
+                </div>     
+                            <!-- Box5 -->
+                 <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/charlie.webp" alt="">
+                    </div>
+                    <div class="a-name">Charlie Puth</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#13</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/riha2.jpg" alt="">
+                    </div>
+                    <div class="a-name">Rihanna</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#14</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/harry1.jpg" alt="">
+                    </div>
+                    <div class="a-name">Harry Styles</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#15</div>
+                   </div>
+                </div>      
+                </div>
+                            <!-- Box6 -->
+                          <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/salena1.webp" alt="">
+                    </div>
+                    <div class="a-name">Selena Gomez</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#16</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/emi.jpg" alt="">
+                    </div>
+                    <div class="a-name">Eminem</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#17</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/katy2.avif" alt="">
+                    </div>
+                    <div class="a-name">Katy Perry</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#18</div>
+                   </div>
+                </div>      
+                </div>
+                        <!-- Box-ultra7 -->
+                           <div class="a-box1">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/lamar.avif" alt="">
+                    </div>
+                    <div class="a-name">Kendrick Lamar</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#19</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/mile.jpg" alt="">
+                    </div>
+                    <div class="a-name">Miley Cyrus</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#20</div>
+                   </div>
+                </div>
+            </div>
+
+
+
+                                  <!-- Canadian -->
+
+
+                 <div class="country"id="Canadian"> <u>Canadian Artists</u> <span class="number" id="num">#17</span></div>
+
+            <div class="a-box" id="indian">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/drake.jpg" alt="">
+                    </div>
+                    <div class="a-name">Drake</div>
+                   <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#1</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/tate.webp" alt="">
+                    </div>
+                    <div class="a-name">Tate McRae</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#2</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/shawan2.webp" alt="">
+                    </div>
+                    <div class="a-name">Shawn Mendes</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#3</div>
+                   </div>
+                </div>
+                
+            </div>
+                        <!-- Box 2 -->
+             <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/celin1.jpg" alt="">
+                    </div>
+                    <div class="a-name">Celine Dion</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#4</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/deni.jpg" alt="">
+                    </div>
+                    <div class="a-name">Daniel Caesar</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#5</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/avril.webp" alt="">
+                    </div>
+                    <div class="a-name">Avril Lavigne</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#6</div>
+                   </div>
+                </div>
+            </div>
+                    <!-- Box3 -->
+              <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/mb.jpg" alt="">
+                    </div>
+                    <div class="a-name">Michael Bublé</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#7</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/nell.webp" alt="">
+                    </div>
+                    <div class="a-name">Nelly Furtado</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#8</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/bryan.jpeg" alt="">
+                    </div>
+                    <div class="a-name">Bryan Adams</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#9</div>
+                   </div>
+                </div>
+                </div>
+                                    <!-- Box4 -->
+                      <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/alisha.avif" alt="">
+                    </div>
+                    <div class="a-name">Alessia Cara</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#10</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/karan2.jpg" alt="">
+                    </div>
+                    <div class="a-name">Karan Aujla</div>
+                      <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#11</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/shania.jpeg" alt="">
+                    </div>
+                    <div class="a-name">Shania Twain</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#12</div>
+                   </div>
+                </div> 
+                </div>     
+                            <!-- Box5 -->
+                 <div class="a-box">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/josh.avif" alt="">
+                    </div>
+                    <div class="a-name">Josh Ross</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#13</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/jepsen.webp" alt="">
+                    </div>
+                    <div class="a-name">Carly Rae Jepsen</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#14</div>
+                   </div>
+                </div>
+                        <!-- 3 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/ali1.jpg" alt="">
+                    </div>
+                    <div class="a-name">Ali Gatie</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#15</div>
+                   </div>
+                </div>      
+                </div>
+                            <!-- Box6 -->
+                         
+                        <!-- Box-ultra7 -->
+                           <div class="a-box1">
+                        <!-- 1 -->
+                <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/alini1.jpeg" alt="">
+                    </div>
+                    <div class="a-name">Alanis Morissette</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#16</div>
+                   </div>
+                </div>
+                        <!-- 2 -->
+                  <div class="adb">
+                    <div class="alogo">
+                        <img class="image" src="images/sara.jpg" alt="">
+                    </div>
+                    <div class="a-name">Sarah McLachlan</div>
+                     <div class="flex">
+                     <button class="btn">Play Now</button>
+                     <div class="ncount">#17</div>
+                   </div>
+                </div>
+            </div>
+        </main>
+
+  
+</body>
+
+</html>
