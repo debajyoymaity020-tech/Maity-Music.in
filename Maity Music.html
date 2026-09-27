@@ -71,7 +71,7 @@
         font-size: 18px;
         border-top-left-radius: 15px;
         border-bottom-right-radius: 15px;
-        margin-bottom: 27px;
+        margin-bottom: 8px;
         /* border: 1px solid red; */
     }
     .play-list h3{
@@ -94,13 +94,13 @@
     }
     main{
         margin-left: 269px;
-        min-height: 121.2vh;
+        min-height: 123.2vh;
         padding-bottom: 110px;
          background: linear-gradient(
         #252525,
         #121212 500px
         );
-        background-color: #14e878;
+        /* background-color: #14e878; */
        
     }
     .left{
@@ -254,13 +254,13 @@
         /* height: 38vh; */
         /* border: 1px solid red; */
         margin-top: 10px;
-        /* position: sticky;
-        top: 0;
-        left: 0; */
     }
     .hx{
         margin-left: 40px;
         font-size: 30px;
+        /* position: sticky;
+        top: 0;
+        left: 0; */
         margin-top: 6px;
         margin-bottom: 10px;
     }
@@ -367,6 +367,9 @@
     cursor: pointer;
     display:none;
 }
+.play1:active{
+    zoom: 85%;
+}
 .play1:hover{
     box-shadow: 0 0 10px white,
     0 0 10px black;
@@ -375,7 +378,7 @@
     /* color: white; */
 }
 .card:hover .play1{
-    display: inline;
+    display: inline-block;
     transition: all ease-in-out 0.2s;
 }
 
@@ -390,6 +393,26 @@
 		color:  #c5c0c0;
     margin-left: 11px;
 }
+
+
+/* ////////////////////// */
+
+.a{
+		height: 349px;
+		width: 100%;
+		/* border: 1px solid red; */
+	}
+	.c{
+		height: 80%;
+		width: 100%;
+		border:1px solid black;
+		position: sticky;
+		top: 0;
+		left: 0;
+		overflow-y: auto;
+	}
+
+
 .populer{
     font-size: 35px;
     margin-left:37px ;
@@ -509,6 +532,9 @@
     background-color: #1ed768;
     margin-left: 6%;
     cursor: pointer;
+}
+.play:active{
+    zoom: 85%;
 }
 .play:hover{
     box-shadow: 0 0 10px #1ed760,
@@ -780,7 +806,7 @@ audio{
 
     /* Search mobile-e hide */
     .sr {
-        /* display: none; */
+        display: none;
         width: 10px;
         margin-left: 0;
     }
@@ -791,8 +817,17 @@ audio{
     }
     .src-lite{
         display: inline;
-        margin-left: 155px;
+        margin-left: 5%;
         color: #1ed768;
+        border: 1px solid  #1ed768;
+        padding-left: 19%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 2%;
+        border-radius: 12px;
+        box-shadow: 0 0 10px #1ed760,
+        0 0 10px #1ed760;
+        width: 25%;
     }
         input{
     font-size: 15px;
@@ -810,7 +845,7 @@ audio{
         margin-left: auto;
         margin-right: 5px;
 
-        padding: 10px 12px;
+        padding: 10px 7px;
 
         font-size: 13px;
     }
@@ -954,8 +989,19 @@ audio{
         margin-right: 20px;
 
         margin-top: 20px;
+         position: static;
+        top: 0;
+        left: 0;
+       
     }
-
+    /* .main{
+        height: 1040px;
+    } */
+    .a{
+         position: sticky;
+        top: 0;
+        left: 0;
+    }
     .ps {
         width: calc(100% - 24px);
 
@@ -1125,10 +1171,8 @@ audio{
 	<div class="play-list">
 		<h3>YOUR PLAYLIST</h3>
 		<a href="#love">❤️ My Favourite</a>
-		<a href="#"><span class="r">♫</span>  Bengali Songs</a>
+		<a href="Artists' List.html"><span class="r">👤 </span> All Artists</a>
 		<a href=""><span class="b">🎧 </span>Chill Music</a>
-		<a href="">🔥 Treanding</a>
-		<a href="">🥳 Party Time</a>
 	</div>
 
 </aside>
@@ -1224,12 +1268,17 @@ audio{
                 
             </div>
         </div>
+        <!-- ///////////////////// -->
+
+
+        <div class="a">
         <div class="populer"><b>Populer Songs</b></div>
-       <section class="ps">
+            <div class="c">
+                 <section class="ps">
  <!-- 1 -->
         <div class="ps-all1">
             <div class="number">1</div>
-            <div class="perfect"><img class="image-in" src="image/ipo.jpg" alt=""></div>
+            <div class="perfect"><img class="image-in" src="images/ipo.jpg" alt=""></div>
             <div class="des">
                 <div class="des1"><b>Perfect</b></div>
                 <div class="des2">Ed Sheeran</div>
@@ -1241,19 +1290,18 @@ audio{
 <!-- 2 -->
           <div class="ps-all2" id="love">
              <div class="number">2</div>
-            <div class="perfect"><img class="image-in" src="image/Animal.jpg" alt=""></div>
+            <div class="perfect"><img class="image-in" src="images/Animal.jpg" alt=""></div>
             <div class="des">
                 <div class="des1"><b>Love Story</b></div>
                 <div class="des2">Romantic Hits</div>
             </div>
             <span class="time">4:50</span>
             <button class="play">▶</button>
-           
         </div>
 <!-- 3 -->
           <div class="ps-all2">
              <div class="number">3</div>
-            <div class="perfect"><img class="image-in" src="image/bhut.jpg" alt=""></div>
+            <div class="perfect"><img class="image-in" src="images/bhut.jpg" alt=""></div>
             <div class="des">
                 <div class="des1"><b>Night Changes</b></div>
                 <div class="des2">One Direction</div>
@@ -1261,19 +1309,15 @@ audio{
             <!-- <audio src="Audio/bgmi background copy.mp3" controls></audio> -->
             <span class="time">4:50</span>
             <button class="play">▶</button>
-
-           
         </div>
 <!-- 4 -->
           <div class="ps-all2">
              <div class="number">4</div>
-            <div class="perfect"> <img class="image-in" src="image/ipo.jpg" alt=""></div>
+            <div class="perfect"> <img class="image-in" src="images/Animal.jpg" alt=""></div>
             <div class="des">
                 <div class="des1"><b>Trending Now</b></div>
                 <div class="des2">Top Music</div>
             </div>
-
-            
             <!-- <audio src="Audio/bgmi background copy.mp3" controls></audio> -->
 
             <span class="time">4:50</span>
@@ -1281,7 +1325,7 @@ audio{
         </div>
           <div class="ps-all2">
              <div class="number">4</div>
-            <div class="perfect"> <img class="image-in" src="image/ipo.jpg" alt=""></div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
             <div class="des">
                 <div class="des1"><b>Trending Now</b></div>
                 <div class="des2">Top Music</div>
@@ -1292,22 +1336,150 @@ audio{
 
             <span class="time">4:50</span>
             <button class="play">▶</button>
-        </div>  <div class="ps-all2">
+        </div>  
+        <div class="ps-all2">
              <div class="number">4</div>
-            <div class="perfect"> <img class="image-in" src="image/ipo.jpg" alt=""></div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
             <div class="des">
                 <div class="des1"><b>Trending Now</b></div>
                 <div class="des2">Top Music</div>
             </div>
-
-            
-            <!-- <audio src="Audio/bgmi background copy.mp3" controls></audio> -->
-
             <span class="time">4:50</span>
             <button class="play">▶</button>
-        </div>  <div class="ps-all3">
+        </div> 
+        <div class="ps-all2">
              <div class="number">4</div>
-            <div class="perfect"> <img class="image-in" src="image/ipo.jpg" alt=""></div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+        <div class="ps-all2">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
+            <div class="des">
+                <div class="des1"><b>Trending Now</b></div>
+                <div class="des2">Top Music</div>
+            </div>
+            <span class="time">4:50</span>
+            <button class="play">▶</button>
+        </div> 
+         <div class="ps-all3">
+             <div class="number">4</div>
+            <div class="perfect"> <img class="image-in" src="images/ipo.jpg" alt=""></div>
             <div class="des">
                 <div class="des1"><b>Trending Now</b></div>
                 <div class="des2">Top Music</div>
@@ -1326,20 +1498,25 @@ audio{
         
 
        </section>
+            </div>
+        </div>
+
+        
+    
      </main>
 
 </div>
  <footer class="player">
 
         <div class="love">
-            <img class="ani" src="image/Animal.jpg" alt="">
+            <img class="ani" src="images/Animal.jpg" alt="">
         </div>
         <div class="des">
                 <div class="des1"><b>Pehle Bhi Main</b></div>
                 <div class="des2">Song <span class="dot">•</span> Vishal Mishra, Raj Shekhar</div>
             </div>
             <button class="pre"> ⏮ </button>
-            <audio class="aud" src="Audio/Pehle Bhi Main Tumse Mila Hoon_320(PagalWorld).mp3" controls></audio>
+            <audio class="aud" src="Audio/Pehle Bhi Main Tumse Mila Hoon_320(PagalWorld).mp3" controls ></audio>
             <button class="post">⏭</button>
             <div class="volume"></div>
             <div class="volume">🔊</div>

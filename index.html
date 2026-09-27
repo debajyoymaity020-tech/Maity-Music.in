@@ -20,11 +20,11 @@
 }
 main{
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: space-between;
 }
 .box1{
-    /* height:900.7px; */
+    height: 760.7px;
     width: 49%;
     /* border: 1px solid red; */
     position: relative;
@@ -45,7 +45,7 @@ main{
         inset 0 0 20px rgba(0, 295, 136, 0.08);
 }
 .box{
-    /* height: 788.7px; */
+    height: 788.7px;
     width: 49%;
     /* border: 1px solid red; */
     position: relative;
@@ -67,7 +67,7 @@ main{
 		color: #1ed760;
         font-size: 19px;
         margin-left:110px;
-        margin-top: 10px;
+        margin-top: 20px;
     }
     .gd{
         font-size: 69px;
@@ -117,20 +117,20 @@ main{
 
 .wave1 {
     left: -2px;
-    top: 490px;
+    top: 470px;
     transform: rotate(18deg);
 }
 
 .wave2 {
     left: 20px;
-    top: 505px;
+    top: 485px;
 
     transform: rotate(18deg);
 }
 
 .wave3 {
     left: 50px;
-    top: 515px;
+    top: 495px;
     transform: rotate(18deg);
 }
 .music-note {
@@ -185,7 +185,7 @@ main{
     position: absolute;
 
     left: 140px;
-    top: 489px;
+    top: 450px;
 
     font-size: 240px;
 
@@ -229,11 +229,11 @@ main{
     cursor: pointer;
 }
 .top-bar{
-    margin-top: 30px;
+    margin-top: 20px;
     color: #bdbdbd;
     margin-left: 56%;
     font-size: 15px;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 
 }
 .tm{
@@ -254,10 +254,9 @@ main{
   height: auto;
   width: 70%; 
   border: 2px solid #14e878; 
-  margin-top: 2%;
+  margin-top: 3.5%;
   border-radius: 26px;
   margin-left: 13%;
-  margin-top: 10%;
   align-items: center;
   position: relative;
     background:
@@ -340,7 +339,7 @@ form{
     transition: 0.3s;
     width: 75%;
     margin-left: 8%;
-    margin-top: 3.8%;
+    margin-top: 2.8%;
 }
 .input:hover{
      border-color: #14e878;
@@ -927,6 +926,56 @@ form{
     }
 
 }
+#message {
+    position:absolute;
+    top: 12%;
+    left: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 320px;
+    margin: 12px auto 0;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#message.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#message.success {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    color: #08421f;
+}
+
+#message.error {
+    background: linear-gradient(135deg, #ff6a6a, #ff3b3b);
+    color: #ffffff;
+}
+
+#message .msg-icon {
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+    
+
 
 </style>
 <body>
@@ -952,6 +1001,7 @@ form{
         <div class="music-star star1">☆ </div>
         <div class="music-star star2">☆ </div>
         <div class="music-star star3">☆ </div>
+         <p id="message"></p>
         </div>
       
         <!-- PARTITION -->
@@ -960,31 +1010,32 @@ form{
 
                              <!-- PART 2 -->
         <div class="box">
-            <!-- <div class="top-bar">
+            <div class="top-bar">
         <span class="tm">LISTEN</span>
         <span class="tm1">•</span>
         <span class="tm">FEEL</span>
         <span class="tm1">•</span>
         <span class="tm">BE HAPPY</span>
-            </div> -->
+            </div>
             <div class="lpb">
-            <div class="logo" style="margin-left: 24%; margin-top: 6%; font-size: 35px;"> <b s class="wh">Maity</b> <sub class="s1">♫</sub> <b class="wh">Music</b></div>
+            <div class="logo" style="margin-left: 24%; margin-top: 0%; font-size: 35px;"> <b s class="wh">Maity</b> <sub class="s1">♫</sub> <b class="wh">Music</b></div>
             <div class="lis">Login to continue your music journey</div>
             <div class="ima">
-               <div class="pho"> <img src="image/ll.webp" alt=""></div>
+               <div class="pho"> <img src="images/ll.webp" alt=""></div>
             </div>
-            <form action="">
+            <form action="" id="login-form">
                 <div class="input">
             <span>✉</span>
-                <input class="inp" type="email" placeholder="Email Or Phone">
+                <input class="inp" type="email" placeholder="Email Or Phone" id="email">
                 </div>
                  <div class="input">
             <span>🔒</span>
-                <input class="inp" type="email" placeholder="Enter Password">
+                <input class="inp" type="password" placeholder="Enter Password" id="password">
                 </div>
                 <div class="mar"></div>
-                <a class="login" href="Maity Music.html" target="_blank">Log In</a>
+                <a class="login" href="Maity Music.html" id="login-btn" >Log In</a>
             </form>
+           
             <div class="dass"></div>
             <a class="fp" href="">Forget Password !</a>
             <div class="social">
@@ -1001,8 +1052,28 @@ form{
         <!-- <div class="line line2"></div> -->
         </div>
     </main>
+
+
+    
 </body>
+
 </html>
+<!-- login.addEventListener('submit',function(event){
+    event.preventDefault();
+    const emailinput=document.getElementById("email").value;
+    const enterpassword=document.getElementById("password").value;
+    if(emailinput===username && password===enterpassword){
+        message.style.color="green";
+        message.innerText="login successful";
+        setTimeout(function(){
+            window.location.href= "Maity-Music.html";
+        },1200);
+    }
+    else{
+        message.style.color="red";
+        message.innerText="login failed";
+    }
+}); -->
 
 
                                 <!-- DEVLOPED BY DEBAJYOTI MMAITY-->
