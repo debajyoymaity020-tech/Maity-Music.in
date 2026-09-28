@@ -6,6 +6,328 @@
     <link rel="stylesheet" href="css/Artists' List.css">
     <title>Artists' List</title>
 </head>
+<style>
+  html,
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+.sb{
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 240px;
+		background-color: rgba(0, 0, 0, 1.0);
+		padding: 25px 18px;
+         /* box-shadow:
+        0 0 2px #14e878,
+        0 0 10px #14e878; */
+	}
+	.logo{
+		color: #1ed760;
+		font-size: 27px;
+		margin-bottom: 35px;
+		margin-left: 10px;
+
+	}
+    .s{
+        font-size: 102px;
+          text-shadow:
+        0 0 10px #14e878,
+        0 0 25px #14e878;
+    }
+	.search,
+    .on{
+		display: block;
+		text-decoration: none;
+		color:  #b3b3b3;
+        font-size: 18px;
+        margin-bottom: 20px; 
+        padding-top: 8px;
+        padding-bottom: 5px;
+        padding-left: 13px;
+         border-radius: 15px;
+        margin-bottom: 21px;
+        font-family: 'Courier New', Courier, monospace;
+        
+	}
+    .search{
+        cursor:default;
+    }
+     .of{
+        height: 34%;
+        width: auto;
+        border: 1px solid #1ed760;
+        position: sticky;
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        border-top-right-radius: 30%;
+        border-bottom-left-radius: 30%;
+        margin-top: 15%; 
+        scrollbar-width: none;
+        box-shadow: 0 0 10px #1ed760,
+        0 0 10px #1ed760;
+
+    }  
+    .of:hover{
+        transform: scale(1.04);
+        transition: all ease-in-out 0.3s;
+    }
+    .play-list a{
+        display: block;
+        text-decoration: none;
+        padding-top: 8px;
+        padding-bottom: 5px;
+        padding-left: 17px;
+		color:  #b3b3b3;
+        font-size: 22px;
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-bottom: 8px;
+        /* border: 1px solid red; */
+    }
+    .play-list h3{
+		color:  #b3b3b3;
+        
+    }
+    /* .sb nav a:hover, */
+    .play-list a:hover{
+        color: white;
+    background: #282828;
+        padding: 10px,5px,10px,12px;
+    }
+    .on{
+      color: white;
+    background: #282828;
+    }
+    .search{
+        font-size: 30px;
+        /* margin-left: 7%; */
+        text-decoration: none;
+        /* border: 1px solid red; */
+        padding-left: 47px;
+        background-color: #1ed760;
+        color: black;
+        box-shadow: 0 0 2px #1ed760,
+        0 0 20px #1ed760;
+        margin-top: 20%;
+    }
+    .color-line{
+        border: 1px solid #1ed760;
+        width: 0px;
+        height: 100vh;
+        margin-left: 18.6%;
+        position: fixed;
+    }
+    main{
+         margin-left: 278px;
+        min-height: auto;
+        padding-bottom: 110px;
+         background: linear-gradient(
+        #252525,
+        #121212 500px
+        );
+        color: white;
+    }
+    .top-ser{
+        height: auto;
+        width: 99.2%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        /* border: 1px solid red; */
+        padding-top: 8px;
+    }
+      .sr{
+        margin-left: 86px;
+        width: 60%;
+        /* border: 1px solid red; */
+    }
+   input{
+    font-size: 76px;
+    width: 64%;
+    background-color: black;
+    border: none;
+    height:45px;
+    /* margin-left: 10%; */
+    /* border: 1px solid rgb(60, 108, 127) ; */
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+     box-shadow:
+        0 0 10px rgba(0, 295, 136, 0.6),
+        0 0 25px rgba(0, 295, 136, 0.25),
+        inset 0 0 20px rgba(0, 295, 136, 0.08);
+   }
+   input:hover{
+    border:1px solid skyblue;
+   }
+   input ::placeholder{
+    font-size: 100px;
+   }
+   .srcc{
+     font-size: 23px;
+    color: white;
+    background-color: black;
+    border: none;
+    border:1px solid #1ed760;
+    /* padding: 5px,10,5px,10px; */
+    padding-top: 7px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 14px;
+    border-radius: 13px;
+    margin-left: 14px;
+    cursor: pointer;
+   }
+   .srcc:hover{
+    background-color: #1ed760;
+    color: black;
+    transition: all ease-in-out 0.2s;
+   }
+   .country{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 2%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+     /* text-shadow: 0 0 10px #1ed760,
+    0 0 25px #1ed760; */
+   }
+   .country:hover{
+    color: #1ed760;
+   }
+   .number{
+    color: #1ed760;
+    box-shadow: none;
+   }
+   .country:hover .number{
+    color: white;
+    text-shadow: 0 0 10px #1ed760,
+    0 0 25px #1ed760;
+   }
+   .a-box{
+    width: 84%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3%;
+    /* border: 1px solid red; */
+    margin-left: 8%;
+   }
+   .adb{
+    height: auto;
+    width: 25%;
+    border: 0.1px solid #1ed760; 
+     /* box-shadow: 0 0 10px #1ed760,
+    0 0 10px #1ed760; */
+    background: #181818;
+    border-radius: 13px;
+   }
+   .alogo{
+    height: 160px;
+    width: 60%;
+    border: 1px solid #1ed760;
+    box-shadow: 0 0 10px #1ed760,
+    0 0 10px #1ed760;
+    border-radius: 50%;
+    margin-top: 7%;
+    margin-left: 20%;
+   }
+   .image{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+   }
+   .a-name{
+    width: auto;
+    /* border: 1px solid red; */
+    font-family: cursive;
+    /* margin-left: 28%; */
+	color:  #b3b3b3;
+    margin-top: 6%;
+    font-size: 20px;
+    text-align: center;
+   }
+   .flex{
+    display: flex;
+    align-items: center;
+    /* justify-content: spa; */
+   }
+   .ncount{
+    margin-left: 11%;
+    font-size: 20px;
+	color:  #b3b3b3;
+    font-family: "Bebas Neue", sans-serif;
+    display: none;
+    cursor: default;
+   }
+   .adb:hover .ncount{
+    display: inline-block;
+   }
+   .ncount:hover{
+    color: white;
+    transition: all ease-in-out 0.2s;
+   }
+   .btn{
+    padding: 7px;
+    margin-top: 7%;
+    font-size: 17px;
+    margin-left: 31%;
+    margin-bottom: 5%;
+    background-color: #1ed760;
+    border: none;
+    color: black;
+    border-radius: 15px;
+    cursor: pointer;
+    /* display: none; */
+   }
+  .btn:active{
+    color: white;
+    background-color: black;
+  }
+   .btn:hover{
+    box-shadow: 0 0 10px #1ed760,
+    0 0 10px #1ed760;
+    transform: scale(1.06);
+    transition: all ease-in-out 0.2s;
+   }
+   .adb:hover{
+    transform: translateY(-9px);
+    transition: all ease-in-out 0.3s;
+         background: #282828;
+        box-shadow: 0 0 10px #1ed760,
+    0 0 10px #1ed760;  
+
+   }
+   .adb:hover .alogo{
+    box-shadow:none;
+   }
+   .adb:hover .a-name{
+    color: white;
+     text-shadow: 0 0 10px #1ed760,
+    0 0 10px #1ed760;
+   }
+   .a-box1{
+     width: 84%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 3%;
+    /* border: 1px solid red; */
+    margin-left: 8%;
+   }
+  
+
+
+</style>
 <body>
     <aside class="sb">
 	<div class="logo"> Maity <sub class="s">♫</sub> Music</div>
