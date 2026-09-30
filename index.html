@@ -10,7 +10,7 @@
     <title>Maity Music Login</title>
 </head>
 <style>
-    body{
+  body{
     min-height: 100vh;
     background:
         radial-gradient(circle at 15% 20%, #043d26 0%, transparent 30%),
@@ -58,6 +58,9 @@ main{
 		/* margin-bottom: 35px; */
         margin-top: 20px;
         margin-left: 110px;
+        margin-left: 24%; 
+        margin-top: 0%; 
+        font-size: 35px;
 	}
     .s{
         font-size: 72px;
@@ -390,7 +393,7 @@ form{
         inset 0 0 20px rgba(0, 295, 136, 0.08);
 }
 .mar{
-    margin-top: 10%;
+    /* margin-top: 10%; */
 }
 .dass{
     width: 70%;
@@ -930,8 +933,8 @@ form{
 }
 #message {
     position:absolute;
-    top: 12%;
-    left: 50%;
+    top: 47%;
+    left: 60%;
     display: none;
     align-items: center;
     justify-content: center;
@@ -951,8 +954,8 @@ form{
 
 #message.show {
     display: flex;
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 90%;
+    transform: translateY(-9);
 }
 
 #message.success {
@@ -970,6 +973,42 @@ form{
 }
 
 
+@media(max-height:700px){
+    .top-bar{
+        margin-top: 10px;
+        font-size: 13px;
+        margin-bottom: 1.5%;
+    }
+    .lpb{
+        margin-top: 0px;
+        width: 65%;
+    }
+    .logo{
+        font-size: 25px;
+        margin-left: 35%;
+    }
+    .s1{
+        font-size: 55px;
+    }
+    .lis{
+        margin-left: 24%;
+    }
+    .ima{
+        /* display: none; */
+    }
+    .input{
+        margin-top: 1.6%;
+    }
+    .dass{
+        margin-top: 3%;
+    }
+    .su{
+        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-left: 27%;
+    }
+    
+}
 
 
 
@@ -977,6 +1016,9 @@ form{
 
 
     
+
+
+
 
 
 </style>
@@ -1020,7 +1062,7 @@ form{
         <span class="tm">BE HAPPY</span>
             </div>
             <div class="lpb">
-            <div class="logo" style="margin-left: 24%; margin-top: 0%; font-size: 35px;"> <b s class="wh">Maity</b> <sub class="s1">♫</sub> <b class="wh">Music</b></div>
+            <div class="logo" > <b s class="wh">Maity</b> <sub class="s1">♫</sub> <b class="wh">Music</b></div>
             <div class="lis">Login to continue your music journey</div>
             <div class="ima">
                <div class="pho"> <img src="images/ll.webp" alt=""></div>
@@ -1060,22 +1102,7 @@ form{
 </body>
 
 </html>
-<!-- login.addEventListener('submit',function(event){
-    event.preventDefault();
-    const emailinput=document.getElementById("email").value;
-    const enterpassword=document.getElementById("password").value;
-    if(emailinput===username && password===enterpassword){
-        message.style.color="green";
-        message.innerText="login successful";
-        setTimeout(function(){
-            window.location.href= "Maity-Music.html";
-        },1200);
-    }
-    else{
-        message.style.color="red";
-        message.innerText="login failed";
-    }
-}); -->
+
 
 
                                 <!-- DEVLOPED BY DEBAJYOTI MMAITY-->
