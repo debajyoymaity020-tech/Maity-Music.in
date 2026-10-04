@@ -1,0 +1,125 @@
+html{
+    border: none !important;
+    border-radius: none !important;
+    background-color: none !important;
+}
+body{
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 20%, #043d26 0%, transparent 30%),
+        radial-gradient(circle at 90% 10%, #075a31 0%, transparent 35%),
+        linear-gradient(135deg, #021711, #00100c 60%, #031c14);
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.box{
+    height: 80vh;
+    width: 40%;
+    border: 1px solid #1ed760;
+    margin-top: 5%;
+    margin-left: 32%;
+    border-radius: 8%;
+    box-shadow: 0 0 7px #1ed760,
+    0 0 10px #1ed760;
+}
+.m-box{
+     display: flex;
+    gap: 10px;
+    margin-left: 24%;
+    
+}
+.m{
+    font-size: 40px;
+    text-shadow: 0 0 10px #1ed760,
+    0 0 25px #1ed760;
+    margin-top: 10%;
+}
+.s{
+    font-size:90px;
+    margin-top: 1%;
+    color: #1ed760;
+}
+.in-b{
+    display: flex;
+}
+.in-u{
+    margin-top: 5%;
+    display: flex;
+}
+.input{
+    height: 70px;
+    width: 60%;
+    border: 1px solid #075a31;
+    border-radius: 10px;
+    /* text-align: center; */
+    margin-left: 8%;
+    
+}
+.input  input{
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    outline: none;
+    width: 90%;
+    margin-top: 7%;
+    color: white;
+    margin-left: 5%;
+}
+.input1{
+    height: 70px;
+    width: 83%;
+    border: 1px solid #075a31;
+    border-radius: 10px;
+    /* text-align: center; */
+    margin-left: 8%;
+    
+}
+.input1  input{
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    outline: none;
+    width: 90%;
+    margin-top: 4.4%;
+    color: white;
+    margin-left: 5%;
+}
+
+button{
+    font-size: 20px;
+    margin-left: 3%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #075a31;
+    background-color: #1ed760;
+    height: 100%;
+    padding: 20px 16px;
+}
+button:hover{
+    box-shadow: 0 0 10px #1ed760,
+    0 0 20px #1ed760;
+    transition: all ease-in-out 0.2s;
+    transform: scale(1.02);
+}
+
+.input:hover,
+.input1:hover{
+    border: 1px solid #1ed760;
+    transition: all ease-in-out 0.3s;
+}
+input::placeholder{
+    width: 100vh;
+}
+.lb{
+    height: 80px;
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 32%;
+}
+/* .space{
+    margin-left: 5%;
+    font-size: 30px;
+} */
