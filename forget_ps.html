@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+   
+      <h2 id="message"></h2>
+ 
     <div class="box">
        <div class="m-box">
          <div class="m">Maity</div>
@@ -18,33 +21,70 @@
          <div class="input">
             <input type="email" name="" id="" placeholder="Enter email or phone">
          </div>
-         <button>Send OTP</button>
+         <button id="opt-btn">Send OTP</button>
     </div>
  <div class="in-u">
          <div class="input">
-            <input type="email" name="" id="" placeholder="Enter OTP Please">
+            <input type="number" name="" id="" placeholder="Enter OTP Please">
          </div>
-         <button>Verify OTP</button>
+         <button id="av">Verify OTP</button>
     </div>
     <div class="in-u">
          <div class="input1">
-            <input type="email" name="" id="" placeholder="Enter New Password">
+            <input type="password" name="" id="" placeholder="Enter New Password">
          </div>
          <!-- <button>Verify OTP</button> -->
     </div>
     <div class="in-u">
          <div class="input1">
-            <input type="email" name="" id="" placeholder="Confarm password">
+            <input type="password" name="" id="" placeholder="Confarm password">
          </div>
          <!-- <button>Verify OTP</button> -->
     </div>
 <div class="lb">
-    <button><b>Reset Password</b></button>
+    <button id="rp"><b>Reset Password</b></button>
+   
     <!-- <div class="space">||</div>
     <button><b>Login</b></button> -->
 </div>
+ <p></p>
     
        </form>
     </div>
+    <script>
+      const password=document.getElementById('rp');
+      const message=document.getElementById('message');
+      password.addEventListener('click',function(event){
+         event.preventDefault();
+         message.innerText="Password reset successful ✅";
+         message.style.display="block"
+         setTimeout(function(){
+            message.style.display="none";
+            window.location.href="index.html"
+         },1400);
+
+      })
+       const otp=document.getElementById('opt-btn');
+      otp.addEventListener('click',function(event){
+         event.preventDefault();
+         message.innerText="OTP sent successfuly ✅";
+         message.style.display="block"
+         setTimeout(function(){
+            message.style.display="none";
+         },300);
+
+      })
+       const av=document.getElementById('av');
+      av.addEventListener('click',function(event){
+         event.preventDefault();
+         message.innerText="Acount verify successfully ✅";
+         message.style.display="block"
+         setTimeout(function(){
+            message.style.display="none";
+         },350);
+
+      })
+      
+    </script>
 </body>
 </html>
