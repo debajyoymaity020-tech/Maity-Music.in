@@ -532,7 +532,7 @@ input,textarea{
      display: flex;
      align-items: center;
     overflow-x: auto;  
-   scrollbar-width: none;
+   /* scrollbar-width: none; */
     gap: 15px;
 }
 html,
