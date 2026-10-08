@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MAITY MUSIC</title>
+	<title>MAITY ♫ MUSIC</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/Maity Music.css">
     <link rel="apple-touch-icon" href="images/M-icon-512.png">
@@ -333,8 +333,14 @@
     width: 150px;
     margin-top: 10px;
     margin-left: 10px;
+}.cover6 {
+    background: #1db9ac;
+    height: 150px;
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
-.cover6 {
+.cover7 {
     background: rgb(22, 51, 105);
     height: 150px;
     width: 150px;
@@ -512,7 +518,7 @@
     /* height: 8vh; */
     /* border: 1px solid red; */
     margin-left: 2%;
-    width: 33%;
+    width: 29%;
 }
 .des-down{
     margin-left: 2%;
@@ -1245,12 +1251,22 @@ audio{
                     </div>
                 </div>
                 <div class="card">
-                    <div class="cover cover6">🥹</div>
+                    <div class="cover cover7">🥹</div>
                     <div class="store">
                         <div class="store1"><div class="per">Break Up </div>
                     <div class="ed">Sad Songs</div></div>
                         <div class="store2">
                             <button class="play1">▶</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cover cover6">😎</div>
+                    <div class="store">
+                        <div class="store1"><div class="per">Bhojpuri</div>
+                    <div class="ed">Hot Songs</div></div>
+                        <div class="store2">
+                            <button class="play1" id="btn">▶</button>
                         </div>
                     </div>
                 </div>
@@ -1331,7 +1347,7 @@ audio{
             <div class="perfect"> <img class="image-in" src="images/bhuladena2.jpg" alt=""></div>
             <div class="des">
                 <div class="des1"><b>Bhula Dena "Aashiqui 2"</b></div>
-                <div class="des2">Mustafa Zahid, Jeet Gannguli, Sanjay Masoomm</div>
+                <div class="des2">Mustafa Zahid, Jeet Gannguli, S. M.</div>
             </div>
             <span class="time">4:50</span>
             <button class="play">▶</button>
@@ -1518,6 +1534,15 @@ audio{
     </footer>
 
 
+    <script>
+        const palaynow=document.getElementById('btn');
+palaynow.addEventListener('click', function(event){
+    event.preventDefault();
+    setTimeout(function(){
+        window.location.href="log-bhojpuri.html";
+    },0);
+})
+    </script>
 </body>
 </html>
 

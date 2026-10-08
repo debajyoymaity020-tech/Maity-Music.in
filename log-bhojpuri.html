@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private</title>
+</head>
+<style>
+    
+    body{
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 15% 20%, #043d26 0%, transparent 30%),
+        radial-gradient(circle at 90% 10%, #075a31 0%, transparent 35%),
+        linear-gradient(135deg, #021711, #00100c 60%, #031c14);
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    position: relative;
+}   
+    .input{
+        height: 70px;
+        width: 40%;
+        border: 2px solid #0c7a43;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 10%;
+        margin-left: 31%;
+        border-radius: 18px;
+        
+    }
+      .input:hover{
+        border:2px solid #1ed760;
+        transition: all ease-in-out 0.2s;
+      }
+    input{
+        height: 95%;
+        width: 98%;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 40px;
+        color: #1ed760;
+        /* font-family: 'Courier New', Courier, monospace; */
+
+    }
+     .oo{
+        font-size: 40px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        margin-top: 6%;
+        margin-left: 16%;
+         text-shadow: 0 0 10px #1ed760,
+        0 0 25px #1ed760;
+        color: #1ed760;
+        /* padding-top: 30%; */
+    }
+    .bp{
+         font-size: 40px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        margin-top: 5%;
+        margin-left: 30%;
+        text-shadow: 0 0 10px #1ed760,
+        0 0 25px #1ed760;
+    }
+    button{
+        padding: 19px 32px;
+        font-size: 30px;
+        border-radius: 12px;
+        border: none;
+        background-color: #1ed760;
+        cursor: pointer;
+        margin-top: 3%;
+        margin-left: 46%;
+        outline: none;
+    }
+    button:hover{
+        box-shadow: 0 0 10px #1ed760,
+        0 0 22px #1ed760;
+        transition: all ease-in-out 0.3s;
+    }
+    button:active{
+        zoom: 97%;
+        color: #1ed760;
+        background-color: black;
+        transition: all ease-in-out 0.0s;
+    }
+    #message{
+       position: absolute;
+         top:60%;
+        font-size: 30px;
+        margin-left: 43%;
+        text-shadow: 0 0 20px white,
+        0 0 40px black;
+        background-color:white;
+        padding: 5px 30px;
+        display: none;
+        border-radius: 19px;
+    }
+
+</style>
+<body>
+    <p id="message"></p>
+     <div class="oo"><span class="c">Only Bhojpuri</span> <span class="no">No...</span>comment <span class="no">No...</span>argument</div>
+    <div class="bp">Only for Bhojpuri lovers </div>
+        <div class="input">
+        <input type="password" placeholder="Enter Password to access......!!" id="ps">
+        </div>
+    </form>
+    <button id="btn">Login</button>
+    <script>
+        const ms=document.getElementById('message');
+        const btn=document.getElementById('btn');
+        btn.addEventListener('click',function(event){
+            event.preventDefault();
+            const ps=document.getElementById("ps").value;
+            if(ps==2007){
+                ms.innerText="Login Successful";
+                ms.style.color="#1ed760";
+                ms.style.display="block";
+                setTimeout(function(){
+                    window.location.href="bhojpuri_vives.html"
+                     ms.innerText="Login Successful";
+                },1200)
+            }
+            else{
+                  ms.innerText="Login Failed !!";
+                ms.style.color="Red";
+                ms.style.display="block";
+                setTimeout(function(){
+                    ms.innerText="";
+                    ms.style.display="none";
+                },700)
+            }
+        })
+    </script>
+</body>
+</html>
