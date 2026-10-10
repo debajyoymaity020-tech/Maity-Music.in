@@ -388,12 +388,13 @@ input,textarea{
          padding: 7px 20px;
         font-size: 21px;
         background-color:  #66e07a;
-        width: 31%;
-     font-family: 'Courier New', Courier, monospace;
+        width: 34%;
+      font-family: 'Courier New', Courier, monospace;
         color: black;
         font-weight: bold;
         border-radius: 47px;
         margin-left: 4%;
+        align-items: center;
     }
     .a-s{
         height: 75%;
