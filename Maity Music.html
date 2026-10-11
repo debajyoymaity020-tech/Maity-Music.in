@@ -376,9 +376,9 @@
                 <div class="des1" id="player-title"><b>Play Music</b></div>
                 <div class="des2">Song <span class="dot">•</span> <span id="player-artist">Singer Name </span></div>
             </div>
-            <button class="pre"> ⏮ </button>
+            <button class="pre" id="prev-btn"> ⏮ </button>
             <audio class="aud" id="main-audio" src="Audio/Shyama Aan Baso Sachet Tandon 128 Kbps.mp3" controls ></audio>
-            <button class="post">⏭</button>
+            <button class="post" id="next-btn">⏭</button>
             <div class="volume"></div>
             <div class="volume">🔊</div>
             <div class="min">-</div>
@@ -398,49 +398,75 @@
         window.location.href = "log-bhojpuri.html";
     });
 
-    // ---- Popular songs player ----
+    // ---- Player elements ----
     const audio   = document.getElementById('main-audio');
     const pImg    = document.getElementById('player-img');
     const pTitle  = document.getElementById('player-title');
     const pArtist = document.getElementById('player-artist');
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
 
     const songs = document.querySelectorAll('.ps [class^="ps-all"]');
+    let currentIndex = -1;   // -1 = list er kono gan ekhono bajchhe na
 
-    songs.forEach(function (song) {
+    // ---- Ekta gan load kore bajao ----
+    function playSong(index) {
+        const song = songs[index];
+        const src = song.dataset.audio;
+        if (!src) return;
+
+        currentIndex = index;
+        audio.src = src;
+        audio.play().catch(function () {});
+
+        pImg.src = song.querySelector('.image-in').src;
+        pTitle.innerHTML = song.querySelector('.des1').innerHTML;
+        pArtist.textContent = song.querySelector('.des2').textContent;
+    }
+
+    // ---- Protita gan er ▶ button ----
+    songs.forEach(function (song, index) {
         const btn = song.querySelector('.play');
 
         btn.addEventListener('click', function () {
-            const src = song.dataset.audio;
-            if (!src) return;   // audio nei hole kichu korbe na
+            if (!song.dataset.audio) return;
 
-            if (audio.getAttribute('src') === src) {
-                // ekoi gan: play/pause toggle
-                if (audio.paused) {
-                    audio.play();
-                } else {
-                    audio.pause();
-                }
+            if (index === currentIndex) {
+                audio.paused ? audio.play() : audio.pause();
             } else {
-                // notun gan
-                audio.src = src;
-                audio.play();
-
-                pImg.src = song.querySelector('.image-in').src;
-                pTitle.innerHTML = song.querySelector('.des1').innerHTML;
-                pArtist.textContent = song.querySelector('.des2').textContent;
+                playSong(index);
             }
         });
     });
 
-    // ▶ / ⏸ icon thik rakhar jonno
+    // ---- Next / Previous (direction: 1 = next, -1 = previous) ----
+    function changeSong(direction) {
+        const total = songs.length;
+        let i = currentIndex;
+
+        for (let step = 0; step < total; step++) {
+            i = (i + direction + total) % total;
+            if (songs[i].dataset.audio) {
+                playSong(i);
+                return;
+            }
+        }
+    }
+
+    nextBtn.addEventListener('click', function () { changeSong(1); });
+    prevBtn.addEventListener('click', function () { changeSong(-1); });
+
+    // ---- AUTO NEXT: gan shesh hole porer gan ----
+    audio.addEventListener('ended', function () { changeSong(1); });
+
+    // ---- ▶ / ⏸ icon ----
     audio.addEventListener('play', updateButtons);
     audio.addEventListener('pause', updateButtons);
 
     function updateButtons() {
-        songs.forEach(function (song) {
+        songs.forEach(function (song, index) {
             const btn = song.querySelector('.play');
-            const isCurrent = song.dataset.audio === audio.getAttribute('src');
-            btn.textContent = (isCurrent && !audio.paused) ? '⏸' : '▶';
+            btn.textContent = (index === currentIndex && !audio.paused) ? '⏸' : '▶';
         });
     }
 </script>
