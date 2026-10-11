@@ -50,7 +50,7 @@ input,textarea{
         font-family: 'Courier New', Courier, monospace;
         font-size: 28px;
         font-weight: bold;
-        animation: cc1 51s infinite;
+        animation: cc1 12s infinite;
     }
     @keyframes cc1{
         from{color: white;}
@@ -99,7 +99,7 @@ input,textarea{
         margin-top: 14%;
         border-radius: 18px;
         text-align: center;
-        animation: cc 51s infinite;
+        animation: cc 12s infinite;
         
     }
     @keyframes cc{

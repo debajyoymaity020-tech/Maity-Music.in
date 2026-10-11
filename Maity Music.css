@@ -359,7 +359,7 @@ body{
     background: #1db9ac;
     height: 150px;
     width: 150px;
-    animation: c6 5s infinite;
+    animation: c6 8s infinite;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -368,7 +368,7 @@ body{
     height: 150px;
     width: 150px;
     margin-top: 10px;
-    animation: c7 8s infinite;
+    animation: c7 5s infinite;
     margin-left: 10px;
 
 }
