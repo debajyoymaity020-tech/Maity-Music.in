@@ -573,9 +573,9 @@ body{
     margin-left: 6%;
     cursor: pointer;
 }
-.play:active{
+/* .play:active{
     zoom: 85%;
-}
+} */
 .play:hover{
     box-shadow: 0 0 10px #1ed760,
     0 0 10px #1ed760;
