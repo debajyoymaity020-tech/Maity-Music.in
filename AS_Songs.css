@@ -104,7 +104,9 @@ input,textarea{
     }
     @keyframes cc{
         from{color: black;}
-        to{color: white; background-color: black;}
+        to{color: white; background-color: black;
+        box-shadow: 0 0 10px #1ed760,
+        0 0 25px #1ed760;}
     }
     .st{
         font-size: 22px;
