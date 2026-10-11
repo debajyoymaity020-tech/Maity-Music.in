@@ -624,7 +624,8 @@ html,
     zoom: 95%;   
 }
 .card2{
-    margin-right: 3%;
+    margin-left: 3%;
+    margin-right: 2%;
 }
 .cpb:hover{
     transform: translateY(-3px);
@@ -652,7 +653,8 @@ html,
     top: 0;
     left: 0;
     overflow-x: auto;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    padding-bottom: 2%;
 }
 
 .letter{
