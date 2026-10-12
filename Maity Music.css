@@ -706,7 +706,8 @@ audio{
     transition: .2s;
     font-size: 50px;
 }
-.ex-btn:hover{
+.ex-btn:hover,
+.ex-btn1:hover{
     color: #fff;
     transform: scale(1.15);
 }
