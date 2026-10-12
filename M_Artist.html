@@ -156,6 +156,8 @@ body{
     background-color: black;
     border: none;
     height:45px;
+    outline: none;
+    border: 1px solid transparent;
     /* margin-left: 10%; */
     /* border: 1px solid rgb(60, 108, 127) ; */
     border-radius: 12px;
@@ -198,23 +200,25 @@ body{
     text-align: center;
     font-size: 30px;
     margin-top: 2%;
+    animation: cun 7s infinite;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    cursor: pointer;
-     /* text-shadow: 0 0 10px #1ed760,
-    0 0 25px #1ed760; */
+    cursor:default;
    }
-   .country:hover{
-    color: #1ed760;
-   }
+  @keyframes cun{
+    from{color:white ;}
+    to{color: #1ed760;}
+  }
    .number{
     color: #1ed760;
     box-shadow: none;
+    animation: num 7s infinite;
    }
-   .country:hover .number{
-    color: white;
-    text-shadow: 0 0 10px #1ed760,
-    0 0 25px #1ed760;
+   @keyframes num{
+    from{}
+    to{color: white; text-shadow: 0 0 40px #1ed760,
+    0 0 5px #1ed760;}
    }
+  
    .a-box{
     width: 84%;
     display: flex;
