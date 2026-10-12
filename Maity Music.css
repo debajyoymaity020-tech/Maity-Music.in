@@ -684,7 +684,7 @@ audio{
     color: #999;
     cursor: pointer;
     padding: 6px;
-    margin-left: 10%;
+    margin-left: 2%;
     border-radius: 50%;
     flex-shrink: 0;
     display: flex;
@@ -714,27 +714,35 @@ audio{
     color: #1ed71e;
     filter: drop-shadow(0 0 6px #1ed71e);
 }
-.volume{
-    font-size: 21px;
-    margin-left: 20px;
+.bit{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 4%;
 }
-.vs{
-    width: 16ch;
-    border: 1px solid #999;
-    background-color: #999;
-    /* margin-left: 3vh; */
-    border-radius: 10px;
-    margin-left: 20px;
+.dot{
+    font-size: 32px;
+    color: #1ed760;
 }
-.vs-p{
-    width: 12ch;
-    border: 1px solid white;
-    border-radius: 10px;
+/* "Maity Music.css"-er sheshe eta paste koro */
+.bit{
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 14px;
+    height: 60px;
+    width: 130px;
+    margin-left: 2%;
+    flex-shrink: 0;
+    margin-bottom: 3%;
 }
-.vs-p:hover{
-    border:1px solid #1ed760;
-    transition: all ease-in-out 0.1s;
-    cursor:pointer;
+.bit .dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 10%;
+    background: #1ed760;
+    font-size: 0;            /* "." text lukiye dao, ekhon asol gol dot */
+    box-shadow: 0 0 10px rgba(30, 215, 96, 0.55);
+    will-change: transform;
 }
 .min{
     font-size: 60px;
