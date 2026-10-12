@@ -218,7 +218,7 @@
             <span class="time">4:50</span>
             <button class="play">▶</button>
         </div> 
-        <div class="ps-all2">
+        <div class="ps-all2" data-audio="Audio/Mujhe Pyaar Hua Tha OST Song(KoshalWorld.Com).mp3">
              <div class="number">8</div>
             <div class="perfect"> <img class="image-in" src="images/kahani.webp" alt=""></div>
             <div class="des">
@@ -380,12 +380,31 @@
             <audio class="aud" id="main-audio" src="Audio/mm.mp3" controls ></audio>
             <button class="post" id="next-btn">⏭</button>
             <div class="volume"></div>
-            <div class="volume">🔊</div>
-            <div class="min">-</div>
-            <div class="vs">
+            <!-- <div class="volume">🔊</div>
+            <div class="min">-</div> -->
+            <!-- <div class="vs">
                 <div class="vs-p"></div>
             </div>
-            <div class="plas">+</div>
+            <div class="plas">+</div> -->
+
+
+            <button class="ex-btn" id="airBtn" aria-label="AirPlay" title="AirPlay">
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 17H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-1"/>
+    <polygon points="12 15 17 21 7 21 12 15" fill="currentColor"/>
+  </svg>
+</button>
+
+<button class="ex-btn1" id="fsBtn" aria-label="Full screen" title="Full screen (F)">
+  <svg id="fsOn" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+  </svg>
+  <svg id="fsOff" viewBox="0 0 24 24" width="34" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+    <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/>
+  </svg>
+</button>
+
+<div class="toast" id="toast"></div>
         
     </footer>
 
@@ -468,7 +487,10 @@
             const btn = song.querySelector('.play');
             btn.textContent = (index === currentIndex && !audio.paused) ? '⏸' : '▶';
         });
+        
     }
+
+    
 </script>
 </body>
 </html>
