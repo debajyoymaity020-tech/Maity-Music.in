@@ -642,17 +642,41 @@ audio{
     color: #999;
     font-size: 20px;
     margin-left: 30px;
-    background: #181818;
+    animation: pt 5s  ease-in-out infinite;
+    /* background: #181818; */
+    background-color: transparent;
     border: none;
     cursor: pointer;
+    border: 1px solid white;
+    padding: 8px 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #1ed71e,
+    0 0 25px #1ed71e;
 }
 .post{
     color: #999;
     font-size: 20px;
     margin-left: 30px;
-    background: #181818;
-    border: none;
+    background: transparent;
+    border: 1px solid white;
     cursor: pointer;
+    animation: pt 5s  ease-in-out infinite;
+     padding: 8px 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #1ed71e,
+    0 0 25px #1ed71e;
+    
+}
+@keyframes pt{
+    0%   { color: #1ed71e; }   /* neon green */
+    14%  { color: #00e5ff; }   /* cyan */
+    28%  { color: #3d8bff; }   /* blue */
+    42%  { color: #b24dff; }   /* purple */
+    49%  {color: rgb(195, 47, 47);}
+    57%  { color: #ff3df2; }   /* pink */
+    71%  { color: #ff9a3d; }   /* orange */
+    85%  { color: #ffe83d; }   /* yellow */
+    100% { color: #1ed71e; }   /* back to green */
 }
 .pre:hover{
     color: #1ed760;;
