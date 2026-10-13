@@ -10,6 +10,52 @@ body{
         padding: 0;
         scroll-behavior:unset;
 	}
+    .my-profile { position: relative; }
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+.profile-btn .bi-list { font-size: 24px; }
+
+.profile-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 230px;
+    background: #282828;
+    color: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.5);
+    display: none;
+    z-index: 1000;
+}
+.profile-menu.show { display: block; }
+
+.profile-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.profile-menu a:hover { background: #3a3a3a; }
+
+.pm-head { padding: 10px 12px 8px; }
+.pm-name { font-weight: 700; }
+.pm-sub  { font-size: 12px; opacity: .6; }
+.pm-divider { height: 1px; background: #444; margin: 6px 0; }
+.pm-logout { color: #ff6b6b !important; }
     /* .m{
         background-color: #22994b;
     } */
@@ -203,6 +249,7 @@ body{
         background-color: black;
         margin-top: 8px;
         cursor: pointer;
+        margin-left: 7%;
     }
     .my-profile:hover{
         color: black;
