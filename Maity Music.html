@@ -290,7 +290,8 @@
                         <button class="play">▶</button>
                     </div>
 
-                    <div class="ps-all2" data-audio="Audio/rata lambiya samiye.mp3" data-video="vedio/Ratan lambiya.mp4">
+                    <!-- FIXED: vedio -> Video (folder er asol naam ja, seta likho) -->
+                    <div class="ps-all2" data-audio="Audio/rata lambiya samiye.mp3" data-video="Video/Ratan lambiya.mp4">
                         <div class="number">15</div>
                         <div class="perfect"><img class="image-in" src="images/samiye.jpg" alt=""></div>
                         <div class="des">
@@ -457,6 +458,11 @@ const canvasArtist = document.getElementById('canvas-artist');
 const songs = document.querySelectorAll('.ps [class^="ps-all"]');
 let currentIndex = -1;
 
+// ================= SAFE PATH (space, bracket, bangla sob encode) =================
+function safe(path) {
+    return path.split('/').map(encodeURIComponent).join('/');
+}
+
 // ================= DYNAMIC TIME (audio file theke) =================
 function fmt(sec) {
     if (!isFinite(sec)) return '0:00';
@@ -472,9 +478,13 @@ songs.forEach(function (song) {
 
     const temp = new Audio();
     temp.preload = 'metadata';
-    temp.src = src;
+    temp.src = safe(src);
     temp.addEventListener('loadedmetadata', function () {
         time.textContent = fmt(temp.duration);
+    });
+    temp.addEventListener('error', function () {
+        console.error('AUDIO NOT FOUND:', temp.src);
+        time.textContent = '--';
     });
 });
 
@@ -491,7 +501,10 @@ function loadCanvas(song) {
         return;
     }
 
-    cVideo.src = v;
+    cVideo.src = safe(v);
+    cVideo.onerror = function () {
+        console.error('VIDEO NOT FOUND:', cVideo.src);
+    };
     canvasTitle.textContent  = song.querySelector('.des1').textContent;
     canvasArtist.textContent = song.querySelector('.des2').textContent;
     canvasPanel.classList.add('show');
@@ -514,7 +527,10 @@ function playSong(index) {
     if (!src) return;
 
     currentIndex = index;
-    audio.src = src;
+    audio.src = safe(src);
+    audio.onerror = function () {
+        console.error('AUDIO NOT FOUND:', audio.src);
+    };
     audio.play().catch(function () {});
 
     pImg.src = song.querySelector('.image-in').src;
